@@ -12,7 +12,7 @@ export class CodepipeLineStack extends cdk.Stack{
             pipelineName : 'TestPipeline',
             synth: new pipeline.ShellStep('Synth', {
                 input : pipeline.CodePipelineSource.gitHub('amitagraibm/manualcodepipeline', 'main'),
-                commands : ['npm ci', 'npm run build', 'npx cdk synth']
+                commands : ['npm install', 'npm run build', 'npx cdk synth']
             })
         });
 
